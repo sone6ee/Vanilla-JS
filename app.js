@@ -116,3 +116,34 @@ const calculator = {
     retrun까지만 작업수행. 즉, 추가작업 수행X
     따라서 추가작업을 실행하고 싶다면 추가작업 다음에 retrun이 와야함. */
 
+
+// const age = prompt("당신은 몇 살인가요?"); 
+/* prompt 사용자에게 창을 띄움. css 적용X
+    JS는 답을 하기 전까지 멈춰있음. 즉, 계속 돌아간다.
+    prompt는 string으로 가져오기 때문에 숫자 또한 문자로 가져옴. 즉, 타입 변환이 필요! */
+ 
+// +) variable 타입 보는 키워드 : typeof  / ex. typeof age
+
+parseInt(); // pareInt : string 타입 -> number 변환
+
+const age = parseInt(prompt("당신은 몇 살인가요?")); // 숫자를 제외한 모든 것을 입력한 경우 값은 NaN이 나옴.
+
+console.log(isNaN(age));
+
+// isNan() : Bolean 형태로 NaN인지를 판별함. 
+
+
+// condition
+if (isNaN(age) || age < 0) {
+    console.log("0 이상의 숫자로 입력해 주세요.");
+} else if (parseInt(age) < 18) {
+        console.log("당신은 너무 어려서 술을 마실 수 없어요.");
+} else if (parseInt(age) >= 18 && parseInt(age) <= 50) {
+    console.log("당신은 술을 마실 수 있습니다.");
+} else if (parseInt(age) >50 && parseInt(age) <= 80) {
+    console.log("당신은 술을 줄이는 게 좋을 것 같아요.");
+} else if (age === 100) {   // === : 일치연산자. 값과 값의 종류(Data Type)가 모두 같은지를 비교해서, 같으면 true, 다르면 false.
+    console.log("Wow you are wise.");
+} else if (age > 80) {
+    console.log("맛있는 걸 많이 드세요.");
+}
